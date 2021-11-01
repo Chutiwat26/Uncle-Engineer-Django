@@ -14,8 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include #inculde คือคำสั่งสำหรับลิงค์ระหว่าง project กับ app
+
+#import created app
+import company
+from company import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include(company.urls)), #project link to 'company'
 ]
